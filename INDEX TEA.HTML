@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D & A TEA BREAK'X</title>
+    <img src="Desktop/d&T logo 2.jpeg" alt="Tea Logo" width="120"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7f50, #ff6347, #ff4500);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 3em;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-top: 30px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #ff4500;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff6347;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>D & A TEA BREAK'X</h1>
+    <div class="container">
+        <h2>We'd love to hear your thoughts!</h2>
+        <form id="reviewForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="teaType">Type of Tea:</label>
+                <input type="text" id="teaType" name="teaType" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating (1 to 5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="5" required></textarea>
+            </div>
+            <input type="submit" value="Submit Review">
+        </form>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; SINCE 2023 D & A TEA BREAK'X Business | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const name = document.getElementById("name").value;
+            const teaType = document.getElementById("teaType").value;
+            const rating = document.getElementById("rating").value;
+            const comments = document.getElementById("comments").value;
+
+            // Display the review (this is where you can connect it to Google Sheets or your backend)
+            alert(`Review Submitted! \nName: ${name}\nTea Type: ${teaType}\nRating: ${rating}\nComments: ${comments}`);
+
+            // Clear the form
+            document.getElementById("reviewForm").reset();
+        });
+    </script>
+</body>
+</html>
